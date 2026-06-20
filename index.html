@@ -5,33 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Before Becoming Heartless</title>
     
-    <!-- Importazione dei font dal web (Eater per il caos/spinoso, Cinzel per il resto) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Eater&display=swap" rel="stylesheet">
 
     <style>
-        /* 
-        =========================================================
-        SE HAI IL FILE DEL FONT ESATTO DELLA COVER SUL TUO PC:
-        1. Mettilo nella stessa cartella di questo file (es. font-ragnatela.ttf).
-        2. Togli i commenti (/* e */) qui sotto.
-        3. Scrivi il nome esatto del tuo file al posto di 'nome-del-font.ttf'.
-        4. Nel blocco "h1" più in basso, cambia 'Eater' in 'CustomSigil'.
-        =========================================================
-        */
-        
-        /*
-        @font-face {
-            font-family: 'CustomSigil';
-            src: url('nome-del-font.ttf') format('truetype');
-        }
-        */
-
         body {
             margin: 0;
             padding: 0;
-            background-color: #050505; /* Sfondo scuro */
+            background-color: #050505;
             color: #ffffff;
             font-family: 'Cinzel', serif;
             display: flex;
@@ -45,14 +27,13 @@
         }
 
         h1 {
-            /* Font spinoso e caotico per simulare lo stile della cover */
             font-family: 'Eater', cursive; 
             font-size: 4.5rem; 
             font-weight: normal;
             margin-bottom: 25px;
             margin-top: 20px;
-            color: #f2e6ff; /* Bianco con una leggerissima sfumatura viola */
-            text-shadow: 0px 0px 20px rgba(153, 51, 255, 0.7); /* Bagliore viola acceso stile cover */
+            color: #f2e6ff;
+            text-shadow: 0px 0px 20px rgba(153, 51, 255, 0.7);
             letter-spacing: 5px;
             line-height: 1.2;
             max-width: 1000px;
@@ -68,14 +49,14 @@
             width: 450px;
             border-radius: 5px;
             box-shadow: 0 4px 25px rgba(0, 0, 0, 0.9);
-            border: 1px solid #332244; /* Bordo leggermente violaceo scuro */
+            border: 1px solid #332244;
         }
 
         #countdown {
             font-size: 2.5rem;
             margin-bottom: 40px;
             font-weight: 700;
-            color: #b366ff; /* Viola per abbinarsi all'estetica di Heartless */
+            color: #b366ff;
             letter-spacing: 3px;
         }
 
@@ -93,12 +74,11 @@
         }
 
         .btn:hover {
-            background-color: #9933ff; /* Viola acceso al passaggio del mouse */
+            background-color: #9933ff;
             color: #ffffff;
             box-shadow: 0 0 20px rgba(153, 51, 255, 0.8);
         }
 
-        /* Adattamento per i telefoni */
         @media (max-width: 600px) {
             h1 { font-size: 2.5rem; }
             #countdown { font-size: 1.5rem; }
@@ -108,21 +88,17 @@
 </head>
 <body>
 
-    <!-- Testo principale -->
     <h1>BEFORE BECOMING HEARTLESS</h1>
 
     <div class="image-container">
-        <!-- L'immagine della cover (deve chiamarsi heartless.jpeg) -->
         <img src="beforebecomingheartlesscover.jpeg" alt="Cover Image">
     </div>
 
     <div id="countdown">Calcolo del tempo...</div>
 
-    <!-- Pulsante con il tuo link Instagram -->
     <a href="https://www.instagram.com/heartlessthealbum" class="btn" target="_blank">Entra</a>
 
     <script>
-        // Data finale: 24 Luglio 2026 all'01:00:00 di notte.
         const countDownDate = new Date("July 24, 2026 01:00:00").getTime();
 
         const x = setInterval(function() {
@@ -141,7 +117,7 @@
 
             if (distance < 0) {
                 clearInterval(x);
-                document.getElementById("countdown").innerHTML = "QUALCHE TEMPO PRIMA DAL DIVENTARE SENZA CUORE.";
+                document.getElementById("countdown").innerHTML = "HEARTLESS IS HERE.";
             }
         }, 1000);
     </script>
