@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Before Becoming Heartless</title>
+    
+    <!-- Importazione dei font dal web (Gotico per il titolo, Cinzel per il resto) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Grenze+Gotisch:wght@900&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #050505;
+            color: #ffffff;
+            font-family: 'Cinzel', serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+            box-sizing: border-box;
+            padding: 20px;
+        }
+
+        h1 {
+            font-family: 'Grenze Gotisch', cursive; 
+            font-size: 5.5rem; 
+            font-weight: 900;
+            margin-bottom: 25px;
+            margin-top: 20px;
+            color: #e0e0e0;
+            text-shadow: 4px 4px 15px rgba(180, 0, 0, 0.7); /* Alone rosso sangue */
+            letter-spacing: 2px;
+            line-height: 1.1;
+            max-width: 900px;
+        }
+
+        .image-container {
+            margin-bottom: 35px;
+        }
+
+        img {
+            max-width: 90%;
+            height: auto;
+            width: 450px;
+            border-radius: 5px;
+            box-shadow: 0 4px 25px rgba(0, 0, 0, 0.9);
+            border: 1px solid #222;
+        }
+
+        #countdown {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            font-weight: 700;
+            color: #8b0000; /* Rosso scuro */
+            letter-spacing: 3px;
+        }
+
+        .btn {
+            text-decoration: none;
+            background-color: #ffffff;
+            color: #000000;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 2px;
+            transition: all 0.4s ease;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .btn:hover {
+            background-color: #8b0000;
+            color: #ffffff;
+            box-shadow: 0 0 20px rgba(139, 0, 0, 0.8);
+        }
+
+        /* Adattamento per i telefoni */
+        @media (max-width: 600px) {
+            h1 { font-size: 3.5rem; }
+            #countdown { font-size: 1.5rem; }
+            img { width: 300px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Titolo: Iniziali maiuscole per mantenere il font gotico leggibile -->
+    <h1>Before Becoming Heartless</h1>
+
+    <div class="image-container">
+        <!-- L'immagine della cover. Assicurati che si chiami heartless.jpeg -->
+        <img src="beforebecomingheartless.jpeg" alt="Cover Image">
+    </div>
+
+    <div id="countdown">Calcolo del tempo...</div>
+
+    <!-- Pulsante con il tuo link Instagram -->
+    <a href="https://www.instagram.com/heartlessthealbum" class="btn" target="_blank">Entra</a>
+
+    <script>
+        // Data finale: 24 Luglio 2026 all'01:00:00 di notte. 
+        // Se intendevi il 2027, cambia "2026" in "2027" qui sotto.
+        const countDownDate = new Date("July 24, 2026 01:00:00").getTime();
+
+        const x = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = countDownDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            const formatTime = (time) => time < 10 ? "0" + time : time;
+
+            document.getElementById("countdown").innerHTML = 
+                days + "G : " + formatTime(hours) + "H : " + formatTime(minutes) + "M : " + formatTime(seconds) + "S";
+
+            if (distance < 0) {
+                clearInterval(x);
+                // Testo che appare quando il timer scade
+                document.getElementById("countdown").innerHTML = "QUALCHE TEMPO PRIMA DI DIVENTARE SENZA CUORE.";
+            }
+        }, 1000);
+    </script>
+
+</body>
+</html>
